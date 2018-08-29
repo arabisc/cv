@@ -1,65 +1,86 @@
 <template>
-  <section class="container">
-    <div>
-      <app-logo/>
-      <h1 class="title">
-        y
-      </h1>
-      <h2 class="subtitle">
-        Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
+  <div class="main-container uk-flex uk-flex-center uk-text-center">
+    <div class="content">
+      <h1 class="heading uk-heading-primary">I am ahmad kassem <span class="secondary-color">koulaib</span></h1>
+      <p class="sub-heading">
+        After more than five years of study and learning, now i can introduce myself as a developer,
+        <br> 
+        designer and professional programmer ... happy to build your applications and websites..
+      </p>
+      <div class="uk-container uk-padding uk-width-3-4@s">
+        <div class="tow-panels uk-child-width-1-2@s uk-grid-match" uk-grid>
+          <div>
+            <blockquote cite="#" class="uk-column-span uk-text-small">
+              <p>
+                Web Design Consultancy, <strong> WEB DEVELOPER</strong> June 2014 – Present
+              </p>
+              <footer class="uk-text-muted">
+                Responsible for working closely with the product management
+               </footer>
+              <footer class="uk-text-muted">
+                team to organise the web presence of clients, and to develop rich
+                user interfaces for them
+              </footer>
+            </blockquote>
+          </div>
+          <div>
+            <blockquote cite="#" class="uk-column-span uk-text-small">
+              <p>Mastery of more than 17 languages software and library software and framework</p>
+              <footer class="uk-text-small uk-text-muted">
+                i am interested in and follow every new in the world of technology, programming and design ...
+                <cite><nuxt-link to="skills">visit the skills part</nuxt-link></cite></footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+      <div class="uk-flex uk-flex-center uk-margin">
+        <ul class="uk-subnav" uk-margin>
+          <li>
+            <a href="#" class="cv-download sequare-border uk-button uk-button-default uk-box-shadow-small">
+              <span uk-icon="icon: cloud-download"></span>
+              download CV
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
+  export default {
+    name: 'page-index',
 
-export default {
-  components: {
-    AppLogo
+    mounted() {
+      this.$nextTick(this.movePageEle);
+    },
+
+    methods: {
+      movePageEle() {
+        const $ = document.querySelector.bind(document);
+        // Create New Time Greensock LineTime
+        const tl = new this.$gsap.TimelineMax();
+        // Element To Anime
+        const heading = $('.heading');
+        const subHeading = $('.sub-heading');
+        const towPanels = document.querySelectorAll('.tow-panels div');
+        const cvDownload = $('.cv-download')
+
+        const eleAnime = [heading, subHeading, towPanels, cvDownload];
+
+        // Start Animation
+        tl.staggerFrom(eleAnime, 0.8, { autoAlpha: 0, y: '+=80', ease: this.$gsap.Back.easeOut }, 0.3);
+      }
+    }
   }
-}
 </script>
 
-<style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
+<style scoped>
+  .content {
+    margin-top: 10vh;
+  }
+  .content h1 {
+    color: #aaaaaa;
+    text-shadow: 1px 0px 0px #454545;
+  }
 </style>
-

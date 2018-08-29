@@ -16,7 +16,7 @@ module.exports = {
   /*
   ** Customize the progress bar color
   */
-  loading: { color: '#3B8070' },
+  loading: { color: '#816f19' },
   /*
   ** Build configuration
   */
@@ -34,6 +34,14 @@ module.exports = {
         })
       }
     }
-  }
+  },
+
+  plugins: [
+    { src: '~/plugins/uikit.js', ssr: false },
+    {  src: '~/plugins/ksvuescrollmagic', ssr: false }
+  ],
+
+  css: ['uikit/dist/css/uikit.css', '~assets/css/main.css'],
+
 }
 

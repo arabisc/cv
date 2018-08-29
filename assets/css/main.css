@@ -1,0 +1,84 @@
+@import url(https://fonts.googleapis.com/css?family=Arvo:400,400italic);
+@font-face {
+  font-family: "/fonts/apercu_regular_pro";
+  src:  url("/apercu_bold_pro.otf") format("woff");
+  font-weight: bold;
+}
+
+:root {
+  --main-color: aliceblue;
+  --secondary-color: #816f19;
+  --main-font:"apercu_regular_pro", sans-serif;
+  --main-bold-font: "apercu_bold_pro", sans-serif;
+  --heading-font: 'Arvo', sans-serif;
+}
+
+html, body {
+  color: var(--main-color);
+  font-family: var(--main-font);
+  font-size: 13px;
+  line-height: 1.7;
+  font-style: italic;
+  background-color: #1a1a1a;
+}
+h1, h2,h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  font-style: italic;
+  color: var(--main-color)
+}
+p {
+  color: var(--main-color) !important;
+  letter-spacing: .75px;
+  text-transform: capitalize;
+}
+
+a {
+  text-decoration: none !important;
+  font-weight: bold;
+  color: var(--main-color);
+}
+a:hover, a:active {
+  outline: none;
+}
+.uk-button {
+  font-family: var(--main-font);
+  font-size: 12px;
+}
+
+/* General Custom Css  */
+.background-secondary {
+  background-color: #1a1a1a
+}
+.secondary-color {
+  color: var(--secondary-color);
+}
+.sequare-border {
+  border: 2px solid #999999;
+}
+.bottom-border {
+  border-bottom: 2px solid #999999;
+}
+.top-border {
+  border-top: 2px solid #999999;
+}
+.icon-circle {
+  border: 2px solid #999999;
+  border-radius: 50%;
+  padding: 6px;
+  text-align: center;
+  vertical-align: middle;
+}
+.secondary-color {
+  color: #907900;
+}
+.uk-light {
+  color: #f5f5f5 !important;
+}
+
+  .page-enter-active, .page-leave-active {
+    transition: opacity .5s
+  }
+
+  .page-enter, .page-leave-active {
+    opacity: 0
+  }
